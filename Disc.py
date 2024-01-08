@@ -26,6 +26,8 @@ class Disc:
 
         return x, y, speed_y, R, t_flight, H, t
 
+    def flight_time
+
     def __horizontal_maximum(self, theta_rad):
         return self.speed0 ** 2 * math.sin(2 * theta_rad) / self.gravitation
 
