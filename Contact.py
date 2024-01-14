@@ -9,7 +9,10 @@ class Contact(object):
         self.bullet = bullet
         self.__touch_time = 0
         self.__wait_time = 0
+        self.double = []
 
+    def get_double(self):
+        return self.double
 
     def get_wait_time(self):
         return self.__wait_time
@@ -23,12 +26,16 @@ class Contact(object):
     def contact(self):
         t1, w1, t2, w2 = self.time_and_wait()
 
-        if (self.bullet.degree0 >= 90):
-            # TODO : Fix 90 degree
-            self.__touch_time, self.__wait_time = self.min(t1, w1, t2, w2)
+        if (self.bullet.x0 < 0 or self.bullet.x0 > 500) :
+            self.double = [t1, w1, t2, w2]
 
-        if (self.bullet.degree0 < 90):
-            self.__touch_time, self.__wait_time = self.max(t1, w1, t2, w2)
+        else:
+            if (self.bullet.degree0 >= 90):
+                # TODO : Fix 90 degree
+                self.__touch_time, self.__wait_time = self.min(t1, w1, t2, w2)
+
+            if (self.bullet.degree0 < 90):
+                self.__touch_time, self.__wait_time = self.max(t1, w1, t2, w2)
 
     def max(self, t1, w1, t2, w2):
 
