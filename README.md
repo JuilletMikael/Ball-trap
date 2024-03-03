@@ -13,7 +13,7 @@ List all dependencies and their version needed by the project as :
 * IDE used PhpStorm 2023.3 or Webstorm 2023.3
 * Python3
 * git version 2.43.0.windows or later [official doc](https://git-scm.com/)
-* OS supported Windows 10
+* OS supported Windows 10, debian, ubuntu
 
 ### Configuration
 
